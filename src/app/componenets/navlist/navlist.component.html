@@ -1,0 +1,15 @@
+<mat-nav-list class="mat-nav-list">
+    <a *ngFor="let sou of mysources" mat-list-item routerLink="dev" (click)="onsideclose()">
+        <!-- <img src="../assets/images/{{sou.id}}.png" width="20" height="20"> -->
+
+        <span class="nav-caption">{{sou.name}}</span>
+    </a>
+    <!-- <a mat-list-item routerLink="#" (click)="onsideclose()">
+        <mat-icon>code</mat-icon>
+        <span class="nav-caption">Programming</span>
+    </a>
+    <a mat-list-item routerLink="#" (click)="onsideclose()">
+        <mat-icon>euro_symbol</mat-icon>
+        <span class="nav-caption">Payment</span>
+    </a> -->
+</mat-nav-list>

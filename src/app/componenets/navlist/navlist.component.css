@@ -1,0 +1,17 @@
+a{
+    text-decoration: none;
+    color: yellow;
+}
+
+.mat-nav-list {
+    margin: 10px;
+}
+
+a:hover, a:active {
+    color: red;
+}
+
+.nav-caption {
+    display: inline-block;
+    padding-left: 7px;
+}

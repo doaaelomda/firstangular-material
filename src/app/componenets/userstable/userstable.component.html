@@ -1,0 +1,58 @@
+<div>
+<div>
+  <button routerLink="adduser" (click)="openuserdialog()" mat-raised-button color="accent">Add User</button>
+</div>
+<br>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Find Users" #name (keyup)="finduserbyname(name)">
+  </mat-form-field>
+</div>
+<div class="example-container mat-elevation-z">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Username </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.address.city}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Delete </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button (click)="deleteItem(element)" mat-raised-button color="accent">Delete</button>
+
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns" sticky:true></mat-header-row>
+      <mat-row (click)="onrowclicked(row)"
+      *matRowDef="let row; columns: displayedColumns" ></mat-row>
+    </mat-table>
+  </div>
+<mat-paginator [length]="100"
+              [pageSize]="3"
+              [pageSizeOptions]="[3, 6, 9, 12]">
+</mat-paginator>
+
+<!-- <div *ngIf="selectedrow">
+  <h2>{{selectedrow.name}}</h2>
+  <h2>{{selectedrow.email}}</h2>
+  <h2>{{selectedrow.address.city}}</h2>
+</div>   -->

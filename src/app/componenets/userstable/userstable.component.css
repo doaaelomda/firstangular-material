@@ -1,0 +1,14 @@
+button,table,mat-table{
+  cursor: pointer;
+}
+.example-full-width {
+    width: 100%;
+  }
+  .mat-row:hover {
+    background-color: yellow;
+  }
+  .example-button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
